@@ -7,7 +7,6 @@ $(document).ready(function() {
         e.preventDefault();
         var $this = $(this);
         var value = $('#value').val();
-        alert("Value added successfully");
         if(value === '') {
             alert('Value field must not be empty');
         }
@@ -20,6 +19,7 @@ $(document).ready(function() {
                 success: function(html) {
                     if (html["status"] === "ok") {
                         addItem(html["value"], html["id"]);
+                        alert("Value added successfully");
                         $('#value').val('')
                     } else {
                         $('#errorField').html(html["value"]);
